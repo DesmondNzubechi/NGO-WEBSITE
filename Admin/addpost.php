@@ -12,13 +12,13 @@ $imgnme = time().'.'.$imgxtension;
 
 if ($conn) {
     # code...
-$sql = 'INSERT INTO `post`(postimg1, Headline, description) 
-VALUES( '$imgnme', '$headline', '$description')';
+$sql = "INSERT INTO `post`(postimg1, Headline, description) 
+VALUES( '$imgnme', '$headline', '$description')";
  $check = mysqli_query($conn, $sql);
 
  if ($check) {
     # code...
-    move_uploaded_file($_FILES['img']['tmp_name'], '/img/'.$imgname);
+    move_uploaded_file($_FILES['img']['tmp_name'], 'img/'.$imgnme);
     $succesMsg = 'Uploaded Successfully';
 
  } else {
