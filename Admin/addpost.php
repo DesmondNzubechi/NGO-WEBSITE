@@ -36,19 +36,6 @@ die();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php include 'header.php' ?>
 
 

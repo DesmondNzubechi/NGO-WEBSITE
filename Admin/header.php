@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body class='bg-slate-200'>
+<body class='bg-slate-200 overflow-x-hidden'>
  <header class='bg-slate-900 flex flex-row items-center justify-between px-[20px] py-[30px]'>
  <div><h1 class='text-[25px] text-[white] font-bold'>NGO WEBSITE</h1></div>
 
