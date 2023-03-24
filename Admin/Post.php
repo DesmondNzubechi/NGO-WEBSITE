@@ -38,13 +38,32 @@ if ($fina > 0) {
             </p>
             <p class='text-[20px] font-bold '><?= $acc['postdate'] ?>  </p>
             <p><?= $fina ?></p>
+        <?php  
+        
+        if($acc['postimg1'] !== '') {
+            # code...
+            ?>
             <img src="img/<?= $acc['postimg1']?>" class='h-[400px] w-[400px] ' alt="" srcset="">
-        </div>
+        
+            <?php
+
+        } else {
+            # code...
+            ?>
+            <p></p>
+            <?php
+        }
+?>
+           </div>
         <div class='flex flex-row gap-[20px] justify-start'>
-<button type="" class='bg-[green] px-[10px] py-[5px] shadow-2xl text-[20px] rounded text-[#fff] font-[500] '>Publish</button>
-<button type="" class='bg-yellow-500  px-[10px] py-[5px] shadow-2xl text-[20px] rounded text-[black] font-[500] '>Edit</button>
-<button type="" class='bg-red-600 px-[10px] py-[5px] shadow-2xl text-[20px] rounded text-slate-50 font-[500] '>Delete</button>
-        </div>
+            <a href="mycode.php?id=<?= $acc['postid']?>"  class='bg-[green] px-[10px] py-[5px] shadow-2xl text-[20px] rounded text-[#fff] font-[500] '>Publish</a>
+            <a href="postedit.php?id=<?=$acc['postid']?>"  class='bg-yellow-500  px-[10px] py-[5px] shadow-2xl text-[20px] rounded text-[black] font-[500] '>Edit</a>
+            <a href="mycode.php?id=<?= $acc['postid']?>"   class='bg-red-600 px-[10px] py-[5px] shadow-2xl text-[20px] rounded text-slate-50 font-[500] '>Delete</a>
+          
+         <!-- <form action="" method="post"><button type="submit">Publish</button></form>
+          <form action="postedit.php" method="post"><button type="submit" class='bg-yellow-500  px-[10px] py-[5px] shadow-2xl text-[20px] rounded text-[black] font-[500] '>Edit</button></form>
+          <form action="" method="post"><button type="submit" class='bg-red-600 px-[10px] py-[5px] shadow-2xl text-[20px] rounded text-slate-50 font-[500] '>Delete</button></form>
+    --> </div>
        </div>
       <?php
     }

@@ -46,8 +46,10 @@ die();
 <a href="post.php" target="_blank" class=' bg-sky-500 py-[5px] px-[10px] left-[20px] absolute justify-self-start text-[20px] font-[600] rounded shadow-2xl '><i class="fa-solid fa-arrow-left"></i></a>
     <h1 class='text-[30px] font-[700] uppercase '>Post</h1>
    </div>
+   <!--
 <div class='flex flex-row justify-around'>
-<form class='text-center gap-[20px] grid grid-cols-1 md:grid-cols-3' action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
+
+<form class='text-center gap-[20px] grid grid-cols-1 md:grid-cols-3' action="" method="post" enctype="multipart/form-data">
 <div class=' flex flex-col items-start gap-[2px]'>
     <label for="headline" class='text-[30px] uppercase font-[700]'> Headline:</label>
     <input type="text" class='px-[20px] py-[10px] w-full outline-0 rounded shadow-2xl' name="headline" id="headline">
@@ -67,5 +69,26 @@ die();
 </form>
 
 </div>
+-->
+<div class='p-[20px]'>
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class='grid gap-[20px]  grid-cols-1 md:grid-cols-2 ' enctype="multipart/form-data">
+<div class='flex flex-col'>
+    <label class='text-[25px] uppercase font-bold' for="">Headline</label>
+    <input type="text" required class='outline-none p-[10px] rounded text-[20px]' name="headline" id="">
+</div>
+<div class='flex flex-col'>
+    <label class='text-[25px] uppercase font-bold' for="">Image</label>
+    <input type="file" required class='outline-none p-[10px] bg-white file:bg-white file:border-0 file: rounded text-[20px]' name="img" id="">
+</div>
+<div class=' md:col-span-2 flex flex-col'>
+    <label class='text-[25px] uppercase font-bold' for="">Full Description</label>
+    <textarea name="description" required class='outline-none p-[10px] rounded text-[20px]' id="" cols="30" rows="10"></textarea>
+</div>
+<div>
+    <input type="submit" name='submit' class='bg-green-500 shadow-2xl rounded text-slate-900 text-[20px] p-[10px] font-[500] uppercase' value="Submit Post">
+</div>
+</form>
+</div>
+
 </div>
 <?php include 'footer.php' ?>
