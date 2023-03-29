@@ -26,6 +26,7 @@ require_once './admin/database.php';
 </div>
 
 <ul class=' md:static fixed sideNav md:left-0 left-[-1000px] ease-out duration-500 top-0 bottom-0 w-[70%] md:pt-[0] pt-[200px]  text-center items-start px-[30px] bg-slate-900 flex-col gap-[10px] flex md:flex-row gap-[20px]'>
+    <li><a href="index.php" class='text-white text-[18] md:text-[25px] uppercase text-[20px] font-[500] hover:underline'>Home</a></li>
 <li class=' showDropDown text-start bg-slate-900'>
         <button class='text-white text-[18] md:text-[25px] uppercase text-[20px] font-[500] hover:underline'>The Problem
         <i class="fa-solid fa-angle-down"></i>
@@ -45,9 +46,9 @@ require_once './admin/database.php';
              <i class="fa-solid hidden  fa-angle-up"></i>
         </button>
         <ul class=' md:absolute hidden ease-out duration-500 dropDown bg-white z-[1] flex flex-col w-fit items-start rounded shadow-2xl p-[20px] text-start gap-[20px]'>
-            <li><a href="" class='text-[16px] md:text-[20px] font-[400]'>Know the Sign</a></li>
+            <li><a href="about.php" class='text-[16px] md:text-[20px] font-[400]'>What we do</a></li>
          
-            <li><a href="" class='text-[16px] md:text-[20px] font-[400]'>Story from Survivors</a></li>
+            <li><a href="contact.php" class='text-[16px] md:text-[20px] font-[400]'>Contact Us</a></li>
            
             <li><a href="" class='text-[16px] md:text-[20px] font-[400]'>Key Facts, Statics and Resources</a></li>
         </ul>
