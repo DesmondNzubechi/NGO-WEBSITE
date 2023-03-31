@@ -2,15 +2,16 @@ let open = document.querySelector('.open');
 let close = document.querySelector('.close');
 let sidemenu = document.querySelector('.sideNav');
 let showDrop = document.querySelectorAll('.ShowDropDown');
-let messageS = document.querySelector('.hidemessageStat');
+//let messageS = document.querySelector('.hidemessageStat');
 
+/*
 messageS.addEventListener('click', () => {
    let hideMsg =  messageS.parentElement.parentElement.children[0];
    if (hideMsg.style.display === 'flex') {
     hideMsg.style.display = 'none';
    }
    console.log(hideMsg);
-})
+})*/
 
 showDrop.forEach(showD => {
     showD.addEventListener('mouseover', () => {

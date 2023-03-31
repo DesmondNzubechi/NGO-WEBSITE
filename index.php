@@ -2,6 +2,32 @@
 include 'include.header.php'
 ?>
 <?php
+ $emailErr = '';
+if (isset($_POST['submit'])) {
+    # code...
+   
+    $email = $_POST['email'];
+
+if (empty($email)) {
+    # code...
+    $emailErr = 'Please Input Your Email ';
+} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    # code...
+    $emailErr = 'Please Input A Valid Email';
+} else {
+
+    $mysql = "INSERT INTO `subscribers`(subemail) VALUES('$email')";
+    $compare = mysqli_query($conn, $mysql);
+    if ($compare) {
+        # code...
+        header('Location: index.php');
+    }
+
+}
+
+
+  
+}
 
 $sql = "SELECT * FROM home";
 $check = mysqli_query($conn, $sql);
@@ -60,12 +86,14 @@ if ($check) {
        <p class='md:text-[25px] text-[20px] font-[400]'>We'll help you stay informed on our fight against human trafficking. </p>
     </div>
     
-    <form class='flex  flex-col   gap-[10px] items-start' action="" method="post">
+    <form class='flex  flex-col   gap-[10px] items-start' action="index.php" method="post">
         
         <label class='text-[30px] font-[300] mb-[-15px] flex flex-row gap-[10px] items-center '  for="email"><i class="fa-solid fa-envelope"></i> <span> Email</span></label>
-        <input class=' py-[10px] max-w-[400px] md:w-[600px]  px-[20px] outline-0 rounded text-[20px] bg-transparent border shadow-2xl ' type="email" name="email" id="email" placeholder='Input Your Email '>
+        <input  class=' py-[10px] max-w-[400px] md:w-[600px]  px-[20px] outline-0 rounded text-[20px] bg-transparent border shadow-2xl ' type="email" name="email" id="email" placeholder='Input Your Email '>
+       
+        <span class='text-red-500 italic text-[20px]'><?php echo $emailErr ?></span>
    
-    <input class='relative bg-slate-900 px-[10px] py-[5px] rounded text-white w-full  text-[30px] shadow-xl z-[1]' type="button" value="Subscribe">
+    <input class='relative bg-slate-900 px-[10px] py-[5px] rounded text-white w-full  text-[30px] shadow-xl z-[1]' type="submit" name='submit' value="Subscribe">
 </form>     
 </div>
 <div class=' bg-[url("./admin/img/lanter.avif")] relative after:bg-slate-900 after:absolute after:top-0 after:bottom-0 after:opacity-[80%] after:w-full flex flex-col text-center justify-center gap-[30px] items-center text-white px-[30px] py-[100px] shadow-2xl after:rounded-b-[20px] rounded-b-[20px] my-[20px] after:rounded-t-[50px] rounded-t-[50px]'>
@@ -223,3 +251,6 @@ if ($check) {
 <?php
 include 'include.footer.php'
 ?>
+<script src="javascript/index.js"></script>
+ </body>
+</html>

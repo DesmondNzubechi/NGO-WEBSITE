@@ -26,11 +26,11 @@ require_once 'database.php';
   
 
  </header>
- <div class='bg-slate-900 h-[100%] hidden md:block  top-0 pt-[100px] bottom-0 left-0  py-[40px] fixed  flex flex-col gap-[40px] px-[40px] '>
-    <h2 class='my-[20px]'><a href="" class='text-slate-100 uppercase text-[25px] flex flex-row gap-2  items-center'><i class="fa-solid fa-gauge"></i> Dashboard</a></h2>
+ <div class='bg-slate-900 h-[100%] hidden md:flex  top-0 pt-[100px] bottom-0 left-0  py-[40px] fixed  flex flex-col gap-[40px] px-[40px] '>
+    <h2 class='my-[20px]'><a href="admin1.php" class='text-slate-100 uppercase  text-[25px] flex flex-row gap-2  items-center'><i class="fa-solid fa-gauge"></i> Dashboard</a></h2>
     <div>
         <ul class='flex flex-col gap-[35px] '>
-              <li><a href="" class='text-[20px] text-slate-50 items-center flex flex-row gap-2 '><i class="fa-solid fa-users-rectangle text-[25px] text-gray-400"></i><span> Subscriber</span> </a></li>
+              <li><a href="subscribe.php" class='text-[20px] text-slate-50 items-center flex flex-row gap-2 '><i class="fa-solid fa-users-rectangle text-[25px] text-gray-400"></i><span> Subscriber</span> </a></li>
                 <!--<li><a href="" class='text-[20px] text-slate-50  items-center flex flex-row gap-2'><i class="fa-solid fa-users text-gray-400"></i>  <span> Supporter</span></a></li>-->
                 <li><a href="message.php" class='text-[20px] text-slate-50 items-center flex flex-row gap-2 '><i class="fa-sharp fa-solid fa-gear text-gray-400"></i> <span> Messages </span></a></li>
             <li><a href="" class='text-[20px] text-slate-50 items-center  flex flex-row gap-2'><i class="fa-solid fa-radio text-gray-400"></i><span>  Pages </span></a></li>

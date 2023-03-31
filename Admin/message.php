@@ -16,9 +16,9 @@
             # code...
 ?>
             <div class=' bg-white  rounded fro shadow-2xl p-5 flex flex-col gap-[10px]'>
-            <p><span class=' text-[20px] font-[500] uppercase'>Sender's Name: </span> <span class='text-[20px] font-[400] '><?= $check['sendername'] ?></span></p>
-            <p ><span class=' text-[20px] font-[500] uppercase'> Sender's Email: </span><a href="mailto:<?= $check['senderemail'] ?>" class='text-[20px] font-[400]'><?= $check['senderemail'] ?></a></p>
-            <p class=' text-[20px] font-[500] uppercase'>Message: </p>
+            <p><span class=' text-[17px] font-[500] '>Sender's Name: </span> <span class='text-[20px] font-[400] '><?= $check['sendername'] ?></span></p>
+            <p ><span class=' text-[17px] font-[500]'> Sender's Email: </span><a href="mailto:<?= $check['senderemail'] ?>" class='text-[20px] font-[400]'><?= $check['senderemail'] ?></a></p>
+            <p class=' text-[17px] font-[500] '>Message: </p>
             <p><!--The presidential campaign councils of the All Progressives Congress and the Peoples Democratic Party have challenged the Department of State Services to get tough with plotters of the interim national government.
 
 The councils, in separate interviews with The PUNCH on Wednesday in Abuja, said the push for the ING was unconstitutional, adding that the plotters should be arrested.
