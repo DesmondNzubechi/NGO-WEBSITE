@@ -41,8 +41,8 @@ require_once 'database.php';
             <li class=' pageview  flex relative flex-col justify-center gap-[20px]'><button class='text-[20px] text-slate-50 items-center  flex flex-row gap-2'><i class="fa-solid fa-radio text-gray-400"></i><span>  Pages </span><i class="fa-solid fa-angle-down"></i>
              <i class="fa-solid hidden  fa-angle-up"></i> </button>
             <ul class='hidden pages bg-slate-200 w-full top-[30px] rounded shadow-2xl absolute flex flex-col px-[15px] py-[6px] gap-2'>
-              <li class='flex flex-col gap-2'>
-                <a href="" class='font-[600] text-[20px]'>Home <i class="fa-solid fa-angle-down"></i>
+              <li class='flex flex-col gap-2 viewOPtion'>
+                <a href="" class='font-[600]  text-[20px]'>Home <i class="fa-solid fa-angle-down"></i>
              <i class="fa-solid hidden  fa-angle-up"></i></a>
               <ul class=' hidden flex flex-row gap-2 '>
                 <li><a href="" class='bg-gradient-to-r from-sky-500 to-blue-500 px-[5px] hover:bg-gradient-to-r hover:from-slate-900 hover:to-blue-900 transition ease-in duration-500 px-[5px] py-1 text-[15px] text-slate-100 rounded shadow-lg font-[500]    '><span> View</span> <i class="fa-solid fa-eye"></i></a></li>
@@ -51,7 +51,7 @@ require_once 'database.php';
             </li>
          
               <span class='bg-slate-900 h-[1px] w-full'></span>
-              <li class='flex flex-col gap-2'>
+              <li class='flex flex-col gap-2 viewOPtion'>
                 <a href="" class='font-[600] text-[20px]'>About<i class="fa-solid fa-angle-down"></i>
              <i class="fa-solid hidden  fa-angle-up"></i></a>
               <ul class='  hidden flex flex-row gap-2 '>
