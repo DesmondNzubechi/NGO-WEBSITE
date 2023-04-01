@@ -14,7 +14,7 @@ require_once 'database.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body class='bg-slate-50'>
+<body class='bg-slate-50 overflow-x-hidden'>
 <header class=' flex shadow-lg px-[20px]  fixed top-0 w-full z-[20]  bg-slate-900 p-0 flex-row  items-center justify-between '>
 <div class=' flex flex-row  md:hidden'>
 
@@ -31,7 +31,7 @@ require_once 'database.php';
   
 
  </header>
- <div class='bg-slate-900 h-[100%] flex  top-0 pt-[100px] bottom-0 left-0  overflow-auto py-[40px] fixed  flex flex-col gap-[40px] px-[40px] '>
+ <div class='bg-slate-900 h-[100%] hidden md:flex  top-0 pt-[100px] bottom-0 left-0  overflow-auto py-[40px] fixed  flex flex-col gap-[40px] px-[40px] '>
     <h2 class='my-[20px]'><a href="admin1.php" class='text-slate-100 uppercase  text-[25px] flex flex-row gap-2  items-center'><i class="fa-solid fa-gauge"></i> Dashboard</a></h2>
     <div>
         <ul class='flex flex-col gap-[35px] '>
