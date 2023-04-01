@@ -58,5 +58,5 @@ foreach($check as $checked) {
 
 </div>
 
-<?php include 'admin.footer.php'; ?>
+<?php include 'admin.footer.php' ?>
 

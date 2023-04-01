@@ -21,17 +21,22 @@ require_once 'database.php';
 <i class="fa-solid fa-bars text-white open  text-[30px]"></i>
 <i class="fa-solid fa-xmark text-white close hidden text-[30px]"></i>
 </div>
- <h1 class='text-[25px]  rounded z-[12] relative bg-slate-900   py-[10px] text-white font-bold'>NGO WEBSITE</h1>
+ <h1 class='text-[25px]  rounded  relative bg-slate-900   py-[10px] text-white font-bold'>NGO WEBSITE</h1>
  <!--<div>
     <h1 class='italic font-[500] text-[20px]'>Welcome Back</h1>
  </div>-->
 
         <button class='px-[20px] btnAdmin flex flex-row gap-2 items-center py-[10px]'><i class="fa-solid fa-user bg-slate-900 
-        py-[8px] px-[10px] border border-slate-200 text-slate-50 shadow-2xl rounded-full text-[35px] "></i> <span class='italic text-slate-200 font-[500] text-[20px]'>Admin</span></button>
+        py-[8px] px-[10px] border border-slate-200 text-slate-50 shadow-2xl rounded-full text-[35px] "></i> <span class='italic text-slate-200 font-[500] text-[20px]'>Admin</span> <i class="fa-solid adminDown text-white fa-angle-down"></i>
+             <i class="fa-solid hidden text-white adminUp  fa-angle-up"></i> </button>
 
-        <div class='fixed top-0'>
-          <a href="">View Profile</a>
-          <a href="">Log out</a>
+        <div class=' fixed top-[-200px]  transition ease-out ... duration-500 adminOp flex gap-2 flex-col right-[40px] rounded shadow-2xl px-[20px] py-[10px] bg-slate-900'>
+        
+          <a href="" class='text-[17px] text-slate-100  '><i class="fa-solid fa-eye"></i> View Profile</a>
+          <hr>
+          <a href="" class='text-[17px] text-slate-100 '><i class="fa-regular fa-pen-to-square"></i> Edit Profile</a>
+          <hr>
+          <a href="" class='text-[17px] text-slate-100 '><i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Log out </a>
         </div>
   
 
@@ -50,8 +55,8 @@ require_once 'database.php';
                 <a href="" class='font-[600]  text-[20px]'>Home <i class="fa-solid fa-angle-down"></i>
              <i class="fa-solid hidden  fa-angle-up"></i></a>
               <ul class=' hidden flex flex-row gap-2 '>
-                <li><a href="" class='bg-gradient-to-r from-sky-500 to-blue-500 px-[5px] hover:bg-gradient-to-r hover:from-slate-900 hover:to-blue-900 transition ease-in duration-500 px-[5px] py-1 text-[15px] text-slate-100 rounded shadow-lg font-[500]    '><span> View</span> <i class="fa-solid fa-eye"></i></a></li>
-                <li><a href="" class='bg-gradient-to-r from-sky-500 px-[5px] py-1 text-[15px] text-slate-100 rounded shadow-lg font-[500] to-blue-500    hover:bg-gradient-to-r hover:from-slate-900 hover:to-blue-900 transition ease-in duration-500'>Edit <i class="fa-solid fa-pen-to-square"></i></a></li>
+                <li><a href="..\index.php" class='bg-gradient-to-r from-sky-500 to-blue-500 px-[5px] hover:bg-gradient-to-r hover:from-slate-900 hover:to-blue-900 transition ease-in duration-500 px-[5px] py-1 text-[15px] text-slate-100 rounded shadow-lg font-[500]    '><span> View</span> <i class="fa-solid fa-eye"></i></a></li>
+                <li><a href="edithome.php" class='bg-gradient-to-r from-sky-500 px-[5px] py-1 text-[15px] text-slate-100 rounded shadow-lg font-[500] to-blue-500    hover:bg-gradient-to-r hover:from-slate-900 hover:to-blue-900 transition ease-in duration-500'>Edit <i class="fa-solid fa-pen-to-square"></i></a></li>
               </ul>
             </li>
          

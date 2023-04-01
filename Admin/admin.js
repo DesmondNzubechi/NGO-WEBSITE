@@ -1,6 +1,29 @@
 
 let viewpage = document.querySelector('.pageview');
 let viewOption = document.querySelectorAll('.viewOPtion');
+let btnAdmin = document.querySelector('.btnAdmin');
+let adminOp = document.querySelector('.adminOp');
+let adminDown = document.querySelector('.adminDown');
+let adminUp = document.querySelector('.adminUp');
+
+
+
+btnAdmin.addEventListener('click', () => {
+
+   if (  adminOp.style.top == '-200px') {
+   
+         adminOp.style.top = '70px';
+         adminDown.style.display = 'none';
+         adminUp.style.display = 'inline-flex';
+
+    
+   } else {
+    adminOp.style.top = '-200px';
+    adminDown.style.display = 'inline-flex';
+    adminUp.style.display = 'none';
+   }
+
+});
 
 
 viewOption.forEach(view => {
