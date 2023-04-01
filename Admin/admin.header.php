@@ -26,8 +26,13 @@ require_once 'database.php';
     <h1 class='italic font-[500] text-[20px]'>Welcome Back</h1>
  </div>-->
 
-        <button class='px-[20px] flex flex-row gap-2 items-center py-[10px]'><i class="fa-solid fa-user bg-slate-900 
+        <button class='px-[20px] btnAdmin flex flex-row gap-2 items-center py-[10px]'><i class="fa-solid fa-user bg-slate-900 
         py-[8px] px-[10px] border border-slate-200 text-slate-50 shadow-2xl rounded-full text-[35px] "></i> <span class='italic text-slate-200 font-[500] text-[20px]'>Admin</span></button>
+
+        <div class='fixed top-0'>
+          <a href="">View Profile</a>
+          <a href="">Log out</a>
+        </div>
   
 
  </header>
