@@ -1,6 +1,15 @@
 <?php include 'admin.header.php' ?>
 
 
+<?php
+
+$sql = "SELECT * FROM home";
+$check = mysqli_query($conn, $sql);
+
+foreach ($check as $checked) {
+  
+
+?>
 
 <div class='px-[30px]  '>
 <form class='md:ml-[150px] flex flex-col gap-[40px]' action="\index.php" method="post">
@@ -60,8 +69,12 @@
 </div>
 
 
+<?php
+}
 
 
+
+?>
 
 
 <?php include 'admin.footer.php' ?>
