@@ -8,11 +8,11 @@ $hero1 = $_POST['Hero1'];
 $hero2 = $_POST['Hero2'];
 $heroc = $_POST['HeroC'];
 $heros = $_POST['HeroS'];
-$joinfightimg = $_POST['joinfightimg'];
+$joinfightimg = $_FILES['joinfightimg']['name'];
 $joinfightheader = $_POST['joinfightheader'];
 $joinfightdetail = $_POST['joinfightdetail'];
 $joinfightbtn = $_POST['joinfightbtn'];
-$ourteamimg = $_POST['ourteamimg'];
+$ourteamimg = $_FILES['ourteamimg']['name'];
 $ourteamheader = $_POST['ourteamheader'];
 $ourteamdetails = $_POST['ourteamdetails'];
 $ourteambtn = $_POST['ourteambtn'];
@@ -20,6 +20,27 @@ $emailheader = $_POST['emailheader'];
 $emailp1 = $_POST['emailp1'];
 $emailp2 = $_POST['emailp2'];
 $emailbtn = $_POST['emailbtn'];
+$ourteamimgold = $_POST['ourteamimgold'];
+$joinfightimgold = $_POST['joinfightimgold'];
+
+$ourteamimgxt = pathinfo($ourteamimg, PATHINFO_EXTENSION);
+$joinfightimgXT = pathinfo($joinfightimg, PATHINFO_EXTENSION);
+$ourteamimgmain;
+$joinfightimgmain;
+
+if ($ourteamimg == null) {
+  $ourteamimgmain = $ourteamimgold;
+} else {
+   $ourteamimgmain = time().'.'.$ourteamimgxt;
+   move_uploaded_file($_FILES['ourteamimgnew']['tmp_name'], 'img/'.$ourteamimgmain);
+};
+
+if ($joinfightimg) {
+    # code...
+} else {
+    # code...
+}
+
 
 
 
