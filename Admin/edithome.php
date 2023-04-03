@@ -2,17 +2,17 @@
 
 
 <?php
-if (isset('updatehome')) {
+if (isset($_POST['updatehome'])) {
     # code...
 $hero1 = $_POST['Hero1'];
 $hero2 = $_POST['Hero2'];
-$heroc = $_POST['HeroC'];
-$heros = $_POST['HeroS'];
-$joinfightimg = $_FILES['joinfightimg']['name'];
+$heroc = $_POST['Heroc'];
+$heros = $_POST['Heros'];
+$joinfightimg = $_FILES['joinfightimgnew']['name'];
 $joinfightheader = $_POST['joinfightheader'];
 $joinfightdetail = $_POST['joinfightdetail'];
 $joinfightbtn = $_POST['joinfightbtn'];
-$ourteamimg = $_FILES['ourteamimg']['name'];
+$ourteamimg = $_FILES['ourteamimgnew']['name'];
 $ourteamheader = $_POST['ourteamheader'];
 $ourteamdetails = $_POST['ourteamdetails'];
 $ourteambtn = $_POST['ourteambtn'];
@@ -24,7 +24,7 @@ $ourteamimgold = $_POST['ourteamimgold'];
 $joinfightimgold = $_POST['joinfightimgold'];
 
 $ourteamimgxt = pathinfo($ourteamimg, PATHINFO_EXTENSION);
-$joinfightimgXT = pathinfo($joinfightimg, PATHINFO_EXTENSION);
+$joinfightimgxT = pathinfo($joinfightimg, PATHINFO_EXTENSION);
 $ourteamimgmain;
 $joinfightimgmain;
 
@@ -35,13 +35,28 @@ if ($ourteamimg == null) {
    move_uploaded_file($_FILES['ourteamimgnew']['tmp_name'], 'img/'.$ourteamimgmain);
 };
 
-if ($joinfightimg) {
+if ($joinfightimg == null) {
     # code...
+    $joinfightimgmain = $joinfightimg;
 } else {
     # code...
-}
+    $joinfightimgmain = time().'.'.$joinfightimgxt;
+    move_uploaded_file($_FILES['joinfightimg']['tmp_name'], 'img/'.$joinfightimgmain);
+};
 
 
+$mysql = "UPDATE home SET Hero1='$hero1', Hero2='$hero2',
+ Heroc='$heroc', Heros='$heros', joinfightimg='$joinfightimgmain',
+joinfightheader='$joinfightheader', joinfightdetail='$joinfightdetail',
+joinfightbtn='$joinfightbtn', ourteamimg='$ourteamimgmain', ourteamheader='$ourteamheader',
+ourteam='$ourteamdetails', ourteambtn='$ourteambtn', emailheader='$emailheader', emailp1='$emailp1',
+emailp2='$emailp2', emailbtn='$emailbtn' WHERE 1";
+$checkUpdate = mysqli_query($conn, $mysql);
+
+if ($checkUpdate) {
+    # code...
+    header('Location: /admin1.php');
+};
 
 
 
@@ -57,7 +72,7 @@ foreach ($check as $checked) {
 ?>
 
 <div class='px-[30px]  '>
-<form class='md:ml-[150px] flex flex-col gap-[40px]' action="\index.php" method="post">
+<form class='md:ml-[150px] flex flex-col gap-[40px]' action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
 <div class='md:ml-[150px]'>
     <textarea name="Hero1" id=""  class='h-[200px] font-[700] p-[20px] flex uppercase text-white bg-slate-700 items-center rounded-lg shadow-lg  overflow-x-auto text-[20px] w-[90%]'> <?= $checked['Hero1'] ?></textarea>
@@ -111,7 +126,7 @@ foreach ($check as $checked) {
     </div>
 </div>
 <div class='md:ml-[130px] justify-center flex'>
-<input type="text" class='text-[20px]  w-fit text-center p-[10px] rounded shadow-xl bg-green-500 text-slate-50 font-[500] outline-0' name="updatehome" value='Update Change' id="">
+<input type="submit" class='text-[20px]  w-fit text-center p-[10px] rounded shadow-xl bg-green-500 text-slate-50 font-[500] outline-0' name="updatehome" value='Update Change' id="">
 </div>
 </form>
 </div>
