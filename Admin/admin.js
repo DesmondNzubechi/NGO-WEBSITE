@@ -9,8 +9,9 @@ let adminUp = document.querySelector('.adminUp');
 
 
 btnAdmin.addEventListener('click', () => {
+    
 
-   if (  adminOp.style.top == '-200px') {
+   if (  adminOp.style.top === '-200px') {
    
          adminOp.style.top = '70px';
          adminDown.style.display = 'none';
