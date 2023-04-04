@@ -32,7 +32,7 @@
     <input  placeholder='Confirm New Email' class='bg-slate-900 p-2 text-[15px] text-white outline-none rounded border-b w-full' type="text" name="oldpwd" id="">
 </div>
 
-<button type="submit" class='bg-green-700 text-[20px]  w-full text-white font-[700]  py-[2px] rounded shadow-2xl '>Update Change</button>
+<button type="submit" class='bg-green-700 text-[20px]  w-full text-white font-[700]  py-[5px] rounded shadow-2xl '>Update Change</button>
 
 
 </form>
