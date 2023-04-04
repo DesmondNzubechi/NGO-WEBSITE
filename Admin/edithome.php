@@ -4,15 +4,16 @@
 <?php
 if (isset($_POST['updatehome'])) {
     # code...
+
 $hero1 = $_POST['Hero1'];
 $hero2 = $_POST['Hero2'];
-$heroc = $_POST['Heroc'];
-$heros = $_POST['Heros'];
-$joinfightimg = $_FILES['joinfightimgnew']['name'];
+$heroc = $_POST['heroC'];
+$heros = $_POST['heroS'];
+$joinfightimgnew = $_FILES['joinfightimg']['name'];
 $joinfightheader = $_POST['joinfightheader'];
 $joinfightdetail = $_POST['joinfightdetail'];
 $joinfightbtn = $_POST['joinfightbtn'];
-$ourteamimg = $_FILES['ourteamimgnew']['name'];
+$ourteamimgnew = $_FILES['ourteamimg']['name'];
 $ourteamheader = $_POST['ourteamheader'];
 $ourteamdetails = $_POST['ourteamdetails'];
 $ourteambtn = $_POST['ourteambtn'];
@@ -23,25 +24,25 @@ $emailbtn = $_POST['emailbtn'];
 $ourteamimgold = $_POST['ourteamimgold'];
 $joinfightimgold = $_POST['joinfightimgold'];
 
-$ourteamimgxt = pathinfo($ourteamimg, PATHINFO_EXTENSION);
-$joinfightimgxT = pathinfo($joinfightimg, PATHINFO_EXTENSION);
+$ourteamimgxt = pathinfo($ourteamimgnew, PATHINFO_EXTENSION);
+$joinfightimgxt = pathinfo($joinfightimgnew, PATHINFO_EXTENSION);
 $ourteamimgmain;
 $joinfightimgmain;
 
-if ($ourteamimg == null) {
+if ($ourteamimgnew == null) {
   $ourteamimgmain = $ourteamimgold;
 } else {
    $ourteamimgmain = time().'.'.$ourteamimgxt;
    move_uploaded_file($_FILES['ourteamimgnew']['tmp_name'], 'img/'.$ourteamimgmain);
 };
 
-if ($joinfightimg == null) {
+if ($joinfightimgnew == null) {
     # code...
-    $joinfightimgmain = $joinfightimg;
+    $joinfightimgmain = $joinfightimgold;
 } else {
     # code...
     $joinfightimgmain = time().'.'.$joinfightimgxt;
-    move_uploaded_file($_FILES['joinfightimg']['tmp_name'], 'img/'.$joinfightimgmain);
+    move_uploaded_file($_FILES['joinfightimgnew']['tmp_name'], 'img/'.$joinfightimgmain);
 };
 
 
@@ -50,7 +51,7 @@ $mysql = "UPDATE home SET Hero1='$hero1', Hero2='$hero2',
 joinfightheader='$joinfightheader', joinfightdetail='$joinfightdetail',
 joinfightbtn='$joinfightbtn', ourteamimg='$ourteamimgmain', ourteamheader='$ourteamheader',
 ourteam='$ourteamdetails', ourteambtn='$ourteambtn', emailheader='$emailheader', emailp1='$emailp1',
-emailp2='$emailp2', emailbtn='$emailbtn' WHERE 1";
+emailp2='$emailp2', emailbtn='$emailbtn'";
 $checkUpdate = mysqli_query($conn, $mysql);
 
 if ($checkUpdate) {
@@ -60,8 +61,11 @@ if ($checkUpdate) {
 
 
 
-}
+};
 
+?>
+
+<?php
 
 $sql = "SELECT * FROM home";
 $check = mysqli_query($conn, $sql);
@@ -87,7 +91,7 @@ foreach ($check as $checked) {
 <hr>
 <div class=' flex flex-col md:ml-[80px] gap-[20px] md:flex-row justify-center'>
     <div class='flex flex-col'>
-    <input type="file"  value="" class='outline-none p-[10px] bg-white file:bg-white file:border-0 file: rounded text-[20px]' name="joinfightimgnew" id=""/> <input type='hidden' name='joinfightimgold' class='text-slate-200' value='<?= $checked['joinfightimg'] ?>' />
+    <input type="file"  value="" class='outline-none p-[10px] bg-white file:bg-white file:border-0 file: rounded text-[20px]' name="joinfightimg" id=""/> <input type='hidden' name='joinfightimgold' class='text-slate-200' value='<?= $checked['joinfightimg'] ?>' />
     <img src="" alt="" class='' srcset="./img/<?= $checked['joinfightimg'] ?>">
     </div>
     <div class='flex flex-col gap-5'>
@@ -100,7 +104,7 @@ foreach ($check as $checked) {
 <hr>
 <div class=' flex flex-col md:ml-[80px]  gap-[20px] md:flex-row justify-center'>
     <div class='flex flex-col'>
-    <input type="file"  value="" class='outline-none p-[10px] bg-white file:bg-white file:border-0 file: rounded text-[20px]' name="ourteamimgnew" id=""/> <input type='hidden' name='ourteamimgold' class='text-slate-200' value='<?= $checked['ourteamimg'] ?>' />
+    <input type="file" name="ourteamimg"  value="" class='outline-none p-[10px] bg-white file:bg-white file:border-0 file: rounded text-[20px]'  id=""/> <input type='hidden' name='ourteamimgold' class='text-slate-200' value='<?= $checked['ourteamimg'] ?>' />
     <img src="" alt="" class='' srcset="./img/<?= $checked['ourteamimg'] ?>">
     </div>
     <div class='flex flex-col gap-5'>
