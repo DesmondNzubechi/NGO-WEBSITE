@@ -32,9 +32,9 @@ require_once 'database.php';
 
         <div class=' fixed top-[-200px]  transition ease-out ... duration-500 adminOp flex gap-2 flex-col right-[40px] rounded shadow-2xl px-[20px] py-[10px] bg-slate-900'>
         
-          <a href="" class='text-[17px] text-slate-100  '><i class="fa-solid fa-eye"></i> View Profile</a>
+          <a href="adminprofile.php" class='text-[17px] text-slate-100  '><i class="fa-solid fa-eye"></i> View Profile</a>
           <hr>
-          <a href="" class='text-[17px] text-slate-100 '><i class="fa-regular fa-pen-to-square"></i> Edit Profile</a>
+          <a href="editadminprofile.php" class='text-[17px] text-slate-100 '><i class="fa-regular fa-pen-to-square"></i> Edit Profile</a>
           <hr>
           <a href="" class='text-[17px] text-slate-100 '><i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Log out </a>
         </div>
