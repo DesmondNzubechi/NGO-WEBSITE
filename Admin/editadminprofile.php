@@ -1,6 +1,14 @@
 <?php include 'admin.header.php' ?>
 
-   
+   <?php
+
+
+$sql = "SELECT * FROM addt WHERE adid=1";
+$sqlcheck = mysqli_query($conn, $sql);
+
+if ($sqlcheck) {
+    # code...
+?>
 
 <div class='px-[20px] md:ml-[150px] flex flex-row justify-center gap-5'>
     <div>
@@ -12,7 +20,7 @@
 
 <div class='flex flex-col items-start gap-0'>
     <label class='text-[20px]  text-white font-[400]' for="username">Username:</label>
-    <input type="text" placeholder='Input Username' class='bg-slate-900 p-2 text-[15px] text-white outline-none rounded w-full border-b' name="username" id="">
+    <input value='' type="text" placeholder='Input Username' class='bg-slate-900 p-2 text-[15px] text-white outline-none rounded w-full border-b' name="username" id="">
 </div>
 <div class='flex flex-col items-start gap-0'>
     <label class='text-[20px]  text-white font-[400]' for="email">Email Address</label>
@@ -29,7 +37,7 @@
 </div>
 <div class='flex flex-col items-start gap-0'>
     <label class='text-[20px]  text-white font-[400]' for="oldpwd">Confirm Password</label>
-    <input  placeholder='Confirm New Email' class='bg-slate-900 p-2 text-[15px] text-white outline-none rounded border-b w-full' type="text" name="oldpwd" id="">
+    <input  placeholder='Confirm New Email' class='bg-slate-900  p-2 text-[15px] text-white outline-none rounded border-b w-full' type="text" name="oldpwd" id="">
 </div>
 
 <button type="submit" class='bg-green-700 text-[20px]  w-full text-white font-[700]  py-[5px] rounded shadow-2xl '>Update Change</button>
@@ -39,6 +47,10 @@
        
 </div>
 </div>
+<?php
+}
+
+?>
 
 
 
