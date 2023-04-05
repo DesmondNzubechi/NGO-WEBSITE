@@ -3,12 +3,37 @@
    <?php
 
 
-$sql = "SELECT * FROM addt WHERE adid=1";
+$sql = "SELECT * FROM addt";
 $sqlcheck = mysqli_query($conn, $sql);
+
+
+
 
 if ($sqlcheck) {
     # code...
-?>
+    foreach ($sqlcheck as $checker) {
+
+        $adminame = $checker['adname'];
+        $adminemail= $checker['ademail'];
+        $adminpwd = $checker['adpw'];
+        }
+    }
+    
+$oldpwdErr = $confirmpwdErr = $emptynewpwd = $emptyoldpwd = $emptyconfirmpwd = '';
+
+    if (isset($_POST['update'])) {
+        # code...
+$oldpwd = $_POST['oldpwd'];
+$newpwd = $_POST['newpwd'];
+$confirmnewpwd = $_POST['confirmnewpwd'];
+
+
+
+    }
+
+
+    ?>
+    
 
 <div class='px-[20px] md:ml-[150px] flex flex-row justify-center gap-5'>
     <div>
@@ -20,11 +45,11 @@ if ($sqlcheck) {
 
 <div class='flex flex-col items-start gap-0'>
     <label class='text-[20px]  text-white font-[400]' for="username">Username:</label>
-    <input value='' type="text" placeholder='Input Username' class='bg-slate-900 p-2 text-[15px] text-white outline-none rounded w-full border-b' name="username" id="">
+    <input disabled value='<?= $adminame ?>' type="text" placeholder='Input Username' class='bg-slate-400 uppercase font-[700]  p-2 text-[15px] text-white outline-none rounded w-full border-b' name="username" id="">
 </div>
 <div class='flex flex-col items-start gap-0'>
     <label class='text-[20px]  text-white font-[400]' for="email">Email Address</label>
-    <input  placeholder='Input Email' class='bg-slate-900 p-2 text-[15px] text-white outline-none rounded border-b w-full' type="email" name="email" id="">
+    <input disabled value='<?= $adminemail ?>'  placeholder='Input Email' class='bg-slate-400 uppercase font-[700] p-2 text-[15px] text-white outline-none rounded border-b w-full' type="email" name="email" id="">
 </div>
 
 <div class='flex flex-col items-start gap-0'>
@@ -37,20 +62,16 @@ if ($sqlcheck) {
 </div>
 <div class='flex flex-col items-start gap-0'>
     <label class='text-[20px]  text-white font-[400]' for="oldpwd">Confirm Password</label>
-    <input  placeholder='Confirm New Email' class='bg-slate-900  p-2 text-[15px] text-white outline-none rounded border-b w-full' type="text" name="oldpwd" id="">
+    <input  placeholder='Confirm New Email' class='bg-slate-900  p-2 text-[15px] text-white outline-none rounded border-b w-full' type="text" name="confirmoldpwd" id="">
 </div>
 
-<button type="submit" class='bg-green-700 text-[20px]  w-full text-white font-[700]  py-[5px] rounded shadow-2xl '>Update Change</button>
+<button type="submit" name='update' class='bg-green-700 text-[20px]  w-full text-white font-[700]  py-[5px] rounded shadow-2xl '>Update Change</button>
 
 
 </form>
        
 </div>
 </div>
-<?php
-}
-
-?>
 
 
 
