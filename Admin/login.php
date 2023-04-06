@@ -72,8 +72,14 @@ if (empty($email)) {
 } elseif ($adminE !== $email  && $adminP !== $password ) {
     $passwordErr = 'Wrong Password';
     $emailErr = 'Wrong email address';
-} else {
+} elseif ($adminE == $email  && $adminP == $password ) {
     # code...
+
+    if (isset($_SESSION['id'])) {
+        # code...
+        header('Location: admin1.php');
+    }
+    
 }
 
 
