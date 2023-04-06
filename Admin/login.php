@@ -2,7 +2,7 @@
 <?php 
 require_once 'database.php';
 $passwordErr = $emailErr = $passwordInput = $emailInput = '';
-
+session_start();
 
 /*if (isset($_POST['submit'])) {
     # code...
@@ -54,6 +54,7 @@ $sqlcheck = mysqli_fetch_assoc(mysqli_query($conn, $sql));
 
 $adminP = $sqlcheck['adpw'];
 $adminE = $sqlcheck['ademail'];
+$_SESSION['id'] = $sqlcheck['adid'];
 
 if (empty($email)) {
    $emailErr = 'Please input email';
@@ -108,12 +109,12 @@ if (empty($email)) {
 <h1 class="text-[23px] uppercase font-[700] text-center my-[10px]">Login Here</h1>
 
 <div class='w-full'>
-<input type="email" value="<?php echo $emailInput; ?>" class='border w-full border-sky-500 text-center my-[10px] text-[20px] outline-none rounded-[5px] p-[5px]' name="email" placeholder='Email Address' id="">
+<input type="email" value="<?php $emailInput; ?>" class='border w-full border-sky-500 text-center my-[10px] text-[20px] outline-none rounded-[5px] p-[5px]' name="email" placeholder='Email Address' id="">
 <br><pan class=" text-[red] text-[20px] font-[500] "><?php echo $emailErr  ?></span>
 </div>
 <div>
 <div class='w-full'>
-<input type="password" value="<?php echo $passwordInput; ?>" class='border w-full border-sky-500 text-center my-[10px] text-[20px] outline-none rounded-[5px] p-[5px]' name="password" placeholder='Password' id="">
+<input type="password" value="<?php $passwordInput; ?>" class='border w-full border-sky-500 text-center my-[10px] text-[20px] outline-none rounded-[5px] p-[5px]' name="password" placeholder='Password' id="">
 <br><pan class=' text-[red] text-[20px] font-[500] '><?php echo $passwordErr  ?></span>
 </div>
 <div class='w-full'>

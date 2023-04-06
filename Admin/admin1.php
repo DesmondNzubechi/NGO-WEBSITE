@@ -1,10 +1,14 @@
 
 
 
-<?php include 'admin.header.php'; ?>
+
+
+<?php 
+include('denylog.php');
+include 'admin.header.php'; 
+?>
 
 <?php
-
 $checkSub = "SELECT * FROM subscribers";
 $confirmSub = mysqli_query($conn, $checkSub);
 $totalSub = mysqli_num_rows($confirmSub);
