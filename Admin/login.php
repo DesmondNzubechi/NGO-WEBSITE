@@ -4,7 +4,7 @@ require_once 'database.php';
 $passwordErr = $emailErr = $passwordInput = $emailInput = '';
 
 
-if (isset($_POST['submit'])) {
+/*if (isset($_POST['submit'])) {
     # code...
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -35,6 +35,45 @@ $emailInput = $emailInput;
     }
     
 
+
+
+}*/
+
+
+if (isset($_POST['submit'])) {
+    # code...
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $passwordInput = $password;
+$emailInput = $email;
+
+
+$sql = "SELECT * FROM addt";
+$sqlcheck = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+
+$adminP = $sqlcheck['adpw'];
+$adminE = $sqlcheck['ademail'];
+
+if (empty($email)) {
+   $emailErr = 'Please input email';
+} elseif (empty($password)) {
+    $passwordErr = 'Please input password';
+} elseif (empty($email) && empty($password)) {
+    # code...
+    $emailErr = 'Please input email';
+    $passwordErr = 'Please input password';
+} elseif ($adminP !== $password) {
+  $passwordErr = 'Wrong Password';
+} elseif ($adminE !== $email) {
+    $emailErr = 'Wrong email address';
+
+} elseif ($adminE !== $email  && $adminP !== $password ) {
+    $passwordErr = 'Wrong Password';
+    $emailErr = 'Wrong email address';
+} else {
+    # code...
+}
 
 
 }
