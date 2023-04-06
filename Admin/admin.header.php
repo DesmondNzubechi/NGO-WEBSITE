@@ -1,4 +1,11 @@
 
+
+<?php
+
+
+?>
+
+
 <?php
 require_once 'database.php';
  ?>
@@ -36,7 +43,7 @@ require_once 'database.php';
           <hr>
           <a href="editadminprofile.php" class='text-[17px] text-slate-100 '><i class="fa-regular fa-pen-to-square"></i> Edit Profile</a>
           <hr>
-          <a href="" class='text-[17px] text-slate-100 '><i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Log out </a>
+          <a href="logout.php" class='text-[17px] text-slate-100 '><i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Log out </a>
         </div>
   
 
