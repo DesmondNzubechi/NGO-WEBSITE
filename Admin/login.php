@@ -4,41 +4,6 @@ require_once 'database.php';
 $passwordErr = $emailErr = $passwordInput = $emailInput = '';
 session_start();
 
-/*if (isset($_POST['submit'])) {
-    # code...
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-$passwordInput = $password;
-$emailInput = $emailInput;
-
-    if (empty($email)) {
-       $emailErr = 'Please enter email';
-    } //elseif(filter_var($email, FILTER_SANITIZE_EMAIL)) {
-       // $emailErr = 'Invalid Email'; }
-     elseif(empty($password)) {
-        $passwordErr = 'Please Input Password';
-    } else {
-        $sql = "SELECT * FROM `users` WHERE useremail='$email' AND userpassword='$password'";
-        $result = mysqli_query($conn, $sql);
-      if ($result) {
-        # code...
-        $num = mysqli_num_rows($result);
-        if ($num > 0) {
-            # code...
-            header('Location: /OOP_PHP/index.php');
-        } else{
-            $passwordErr = 'Make Sure Your Password Is Correct';
-            $emailErr = 'Make Sure Your Email Is Correct ';
-            }
-      }
-    }
-    
-
-
-
-}*/
-
 
 if (isset($_POST['submit'])) {
     # code...

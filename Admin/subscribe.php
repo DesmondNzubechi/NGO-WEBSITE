@@ -4,7 +4,7 @@
 
 <div class='px-[20px]'>
 
-<div class='flex justify-center'>
+<div class='flex  my-[50px] justify-center'>
 <?php 
         
         $sql = "SELECT * FROM subscribers";

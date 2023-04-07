@@ -87,6 +87,6 @@ require_once 'database.php';
     </div>
 </div>
 </div>
- <main class='mt-[60px]'>
+ <main class='mt-[100px]'>
 
 
