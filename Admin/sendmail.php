@@ -1,5 +1,6 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 require_once 'PHPMailer/src/Exception.php';
 require_once 'PHPMailer/src/PHPMailer.php';
@@ -7,7 +8,7 @@ require_once 'PHPMailer/src/SMTP.php';
 
 $mail = new PHPMailer(true);
 
-if (isset($_POST['submit'])) {
+/*if (isset($_POST['submit'])) {
 
 $messageb = $_POST['messagebody'];
 $email =  $_POST['email'];
@@ -16,11 +17,11 @@ $email =  $_POST['email'];
       $mail->isSMTP();
       $mail->Host = 'smtp.gmailcom';
       $mail->SMTPAuth = true;
-      $mail->username = 'yourmail.gmail.com';
-      $mail-> = 'zzphaqntykwmsqmg';
-      $mail->SMTPSecure = 'tls';
-      $mail->Port = '587';
-
+      $mail->username = 'nzubestdesmond@gmail.com';
+      $mail->password = 'zzphaqntykwmsqmg';
+      $mail->SMTPSecure = 'ssl';
+      $mail->Port = 587;
+/*
       $mail->setFrom('youremail@gmail.com');
       $mail->addAddress('nzubestdesmond@gmail.com');
 
@@ -35,7 +36,7 @@ $email =  $_POST['email'];
         $alert = '<div> <span>'.$e->getMessage().' </span>   </div>';
    
     }
-}
+}*/
 
 
 ?>

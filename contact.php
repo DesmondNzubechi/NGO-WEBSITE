@@ -1,9 +1,10 @@
 
 <?php
-
+require_once 'admin/sendmail.php';
 require_once 'admin/database.php';
 
 $messagestat = '';
+$messagec = '';
 
 if (isset($_POST['submit'])) {
   $fullName = $_POST['FullName'];
@@ -20,9 +21,49 @@ if ($queryCheck) {
     $messagestat = '<p class="text-[30px] block my-[20px] bg-gradient-to-r from-red-500 to-blue-500 text-white text-center px-[20px] rounded shadow-xl py-[5px]">Message Succesfully Sent</p>'  ;
 };
 
+/*
+$mail->setFrom('nzubestdesmond@gmail.com');
+$mail->addAddress($email);
+$mail->isHTML(true);
+$mail->subject = 'Message Received from' . $email;
+$mail->body = "Name: $fullName <br> Email Address: $email  <br> Subject: $message";
+
+
+if (!$mail->send()) {
+    $messagec = "<span> Message unsuccessfully sent </span>";
+
+} else {
+    $messagec = "<span> Message successfully sent </span>";
+};
 
 }
- 
+ */
+
+try {
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmailcom';
+    $mail->SMTPAuth = true;
+    $mail->username = 'nzubestdesmond@gmail.com';
+    $mail->password = 'zzphaqntykwmsqmg';
+    $mail->SMTPSecure = "TLS"; 
+    $mail->Port = 587;
+
+    $mail->setFrom('nzubestdesmond@gmail.com');
+    $mail->addAddress($email);
+    $mail->isHTML(true);
+    $mail->subject = 'Message Received from' . $email;
+    $mail->body = "Name: $fullName <br> Email Address: $email  <br> Subject: $message";
+    
+    
+    $mail->send();
+    $messagec = "<span> Message unsuccessfully sent </span>";
+ } catch (Exception $e) {
+      //throw $th;
+      $messagec = "<span> Message successfully sent </span>";
+  }
+
+}
+
 ?>
 
 <?php
@@ -36,6 +77,7 @@ include 'include.header.php'
          
         </div>
           <h1 class='font-[700] text-center text-[30px] mb-[40px] uppercase'>Contact Us</h1>
+          <div><?php $messagec ?></div>
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class='grid block gap-[20px] grid-cols-1 md:grid-cols-2 '>
             <div class='flex flex-col '>
@@ -67,5 +109,5 @@ include 'include.header.php'
 
 
 <?php
-include 'include.footer.php'
+include 'include.footer.php';
 ?>
