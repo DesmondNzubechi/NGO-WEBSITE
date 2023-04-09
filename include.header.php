@@ -33,7 +33,7 @@ require_once './admin/database.php';
              <i class="fa-solid hidden  fa-angle-up"></i>
         </button>
         <ul class=' md:absolute hidden ease-out duration-500 dropDown bg-white z-[1] flex flex-col w-fit items-start rounded shadow-2xl p-[20px] text-start gap-[20px]'>
-            <li><a href="" class='text-[16px] md:text-[20px] font-[400]'>Know the Sign</a></li>
+            <li><a href="news.php" class='text-[16px] md:text-[20px] font-[400]'>News</a></li>
          
             <li><a href="" class='text-[16px] md:text-[20px] font-[400]'>Story from Survivors</a></li>
            
