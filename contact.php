@@ -1,7 +1,17 @@
 
 <?php
-require_once 'admin/sendmail.php';
+//require_once 'sendmail.php';
 require_once 'admin/database.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+require_once 'PHPMailer/src/Exception.php';
+require_once 'PHPMailer/src/PHPMailer.php';
+require_once 'PHPMailer/src/SMTP.php';
+
+
 
 $messagestat = '';
 $messagec = '';
@@ -21,23 +31,40 @@ if ($queryCheck) {
     $messagestat = '<p class="text-[30px] block my-[20px] bg-gradient-to-r from-red-500 to-blue-500 text-white text-center px-[20px] rounded shadow-xl py-[5px]">Message Succesfully Sent</p>'  ;
 };
 
-/*
-$mail->setFrom('nzubestdesmond@gmail.com');
-$mail->addAddress($email);
-$mail->isHTML(true);
-$mail->subject = 'Message Received from' . $email;
-$mail->body = "Name: $fullName <br> Email Address: $email  <br> Subject: $message";
 
 
-if (!$mail->send()) {
-    $messagec = "<span> Message unsuccessfully sent </span>";
+// Initialize PHPMailer object
+$mail = new PHPMailer(true);
 
-} else {
+try {
+    
+    $mail->isSMTP();
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;  
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    $mail->username = "nzubestdesmond@gmail.com";
+    $mail->password = "uhdmsqjsecxygism";
+    $mail->SMTPSecure = "tls";            //Enable implicit TLS encryption
+    $mail->Port = 587;             
+
+    // Set up email properties
+    $mail->setFrom('nzubestdesmond@gmail.com', 'Desmond Nzubechukwu');
+    $mail->addAddress($email, $fullName);
+   
+    $mail->isHTML(true);
+    $mail->Subject = 'Message Received from ' . $email;
+    $mail->Body = 'abugf ' . $email;
+
+    // Send the email
+    $mail->send();
     $messagec = "<span> Message successfully sent </span>";
-};
-
+} catch (Exception $e) {
+    // Handle any errors that occur during sending
+    $messagec = "<span> Message unsuccessfully sent: " . $mail->ErrorInfo . "</span>";
 }
- */
+}
+ /*
+
 
 try {
     $mail->isSMTP();
@@ -45,7 +72,7 @@ try {
     $mail->SMTPAuth = true;
     $mail->username = 'nzubestdesmond@gmail.com';
     $mail->password = 'zzphaqntykwmsqmg';
-    $mail->SMTPSecure = "TLS"; 
+    $mail->SMTPSecure = 'ssl';
     $mail->Port = 587;
 
     $mail->setFrom('nzubestdesmond@gmail.com');
@@ -62,7 +89,7 @@ try {
       $messagec = "<span> Message successfully sent </span>";
   }
 
-}
+*/
 
 ?>
 
@@ -77,7 +104,7 @@ include 'include.header.php'
          
         </div>
           <h1 class='font-[700] text-center text-[30px] mb-[40px] uppercase'>Contact Us</h1>
-          <div><?php $messagec ?></div>
+          <div><?php echo $messagec ?></div>
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class='grid block gap-[20px] grid-cols-1 md:grid-cols-2 '>
             <div class='flex flex-col '>
@@ -107,7 +134,7 @@ include 'include.header.php'
 
 
 
-
+<script src="javascript/index.js"></script>
 <?php
 include 'include.footer.php';
 ?>

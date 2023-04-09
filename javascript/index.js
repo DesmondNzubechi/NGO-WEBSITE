@@ -41,4 +41,3 @@ close.addEventListener('click', () => {
     open.style.display = 'block';
     sidemenu.style.left = '-1000px';
 });
-
